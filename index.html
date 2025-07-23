@@ -12,7 +12,7 @@
       color: #333;
     }
     nav {
-      background-color: #d46ca0; /* soft pink */
+      background-color: #d46ca0;
       padding: 15px;
       display: flex;
       justify-content: center;
@@ -33,7 +33,7 @@
     }
     header img {
       display: block;
-max-width: 200px;
+      max-width: 200px;
       margin: 40px auto 20px;
     }
     h1 {
@@ -44,7 +44,7 @@ max-width: 200px;
     }
     p {
       max-width: 650px;
-margin: 0 auto 30px;
+      margin: 0 auto 30px;
       font-size: 1.15rem;
       line-height: 1.5;
       text-align: center;
@@ -78,7 +78,7 @@ margin: 0 auto 30px;
     footer {
       text-align: center;
       padding: 20px;
-font-size: 0.9rem;
+      font-size: 0.9rem;
       color: #777;
       border-top: 1px solid #eee;
     }
@@ -90,13 +90,12 @@ font-size: 0.9rem;
       color: #d46ca0;
       margin-right: 8px;
     }
-    /* Projects section */
     .project {
       margin-bottom: 40px;
       text-align: center;
     }
     .project img {
-      max-width: 70%;  /* Changed here: smaller than 100% */
+      max-width: 70%;
       height: auto;
       border: 2px solid #d46ca0;
       border-radius: 10px;
@@ -111,7 +110,7 @@ font-size: 0.9rem;
     .project p {
       font-size: 1rem;
       max-width: 600px;
-margin: 0 auto;
+      margin: 0 auto;
       text-align: center;
       line-height: 1.4;
       color: #555;
@@ -134,15 +133,15 @@ margin: 0 auto;
   <!-- Sections -->
   <section id="home" class="active">
     <h1>Welcome to By Hazel Designs</h1>
-    <p>Your one-stop destination for logo design, website creation, and professional company p
-<a href="#" class="btn-primary" data-section="about">Learn More About Us</a>
+    <p>Your one-stop destination for logo design, website creation, and professional company profiles.</p>
+    <a href="#" class="btn-primary" data-section="about">Learn More About Us</a>
   </section>
 
   <section id="about">
     <h1>About By Hazel Designs</h1>
-    <p>By Hazel Designs was born from a passion for creativity and a vision to empower busines>
-    <p>We believe that a strong brand presence is essential in today’s digital world, and we a>
-    <p>Whether you’re a startup looking to make a mark or an established company wanting a fre>
+    <p>By Hazel Designs was born from a passion for creativity and a vision to empower businesses.</p>
+    <p>We believe that a strong brand presence is essential in today’s digital world, and we aim to deliver just that.</p>
+    <p>Whether you’re a startup looking to make a mark or an established company wanting a fresh look, we can help.</p>
   </section>
 
   <section id="projects">
@@ -151,13 +150,13 @@ margin: 0 auto;
     <div class="project">
       <img src="images/profile1.jpg" alt="Project Logo 1" />
       <h3>Logo Project 1</h3>
-      <p>This logo project included designing a unique brand identity with matching domain ema>
+      <p>This logo project included designing a unique brand identity with matching domain emails and company profile.</p>
     </div>
 
     <div class="project">
       <img src="images/profile2.jpg" alt="Project Logo 2" />
       <h3>Logo Project 2</h3>
-      <p>A complete logo design and website creation project with a focus on modern aesthetics>
+      <p>A complete logo design and website creation project with a focus on modern aesthetics and business branding.</p>
     </div>
   </section>
 
@@ -168,23 +167,21 @@ margin: 0 auto;
       <p><strong>Email:</strong> <a href="mailto:hazelweb@yahoo.com">hazelweb@yahoo.com</a></p>
     </div>
   </section>
+
   <footer>
     &copy; 2025 By Hazel Designs. All rights reserved.
   </footer>
 
   <script>
-    // Handle navigation clicks
     const navLinks = document.querySelectorAll('.nav-link');
     const sections = document.querySelectorAll('section');
 
     function setActiveSection(sectionId) {
-      // Show the selected section, hide others
       sections.forEach(sec => {
         sec.id === sectionId ? sec.classList.add('active') : sec.classList.remove('active');
       });
-      // Update nav link active state
       navLinks.forEach(link => {
-        link.dataset.section === sectionId ? link.classList.add('active') : link.classList.rem>
+        link.dataset.section === sectionId ? link.classList.add('active') : link.classList.remove('active');
       });
     }
 
@@ -197,13 +194,14 @@ margin: 0 auto;
       });
     });
 
-    // Also handle Learn More About Us button on home page
     const learnMoreBtn = document.querySelector('.btn-primary');
-    learnMoreBtn.addEventListener('click', e => {
-      e.preventDefault();
-      setActiveSection('about');
- window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
+    if (learnMoreBtn) {
+      learnMoreBtn.addEventListener('click', e => {
+        e.preventDefault();
+        setActiveSection('about');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
   </script>
 
 </body>
